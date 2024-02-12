@@ -94,16 +94,20 @@
         <h3 class="h1 text-danger text-center text-uppercase mb-5">
           Request a Song
         </h3>
+        <form id="song_request">
         <div class="row gx-5">
           <div class="col-lg-7">
             <div class="box">
-              <form action="">
+              <!-- <form action=""> -->
                 <div class="row gy-6">
                   <div class="col-12">
                     <input
                       type="text"
                       class="form-control bg-transparent text-white"
                       placeholder="Your Name"
+                      id="name"
+                      value="asdfad"
+                      required
                     />
                   </div>
                   <div class="col-12">
@@ -111,6 +115,9 @@
                       type="text"
                       class="form-control bg-transparent text-white"
                       placeholder="Email"
+                      id="email"
+                      value="asdfad@gmail.com"
+                      required
                     />
                   </div>
                   <div class="col-12">
@@ -118,24 +125,28 @@
                       type="text"
                       class="form-control bg-transparent text-white"
                       placeholder="Instagram URL"
+                      id="insta_url"
+                      value="asdfad"
+                      required
                     />
                   </div>
-                  <div class="col-12 text-end">
+                  <!-- <div class="col-12 text-end">
                     <button class="btn btn-light bg-white">Submit</button>
-                  </div>
+                  </div> -->
                 </div>
-              </form>
+              <!-- </form> -->
             </div>
           </div>
           <div class="col-lg-5">
             <div class="white-box">
               <p class="font-roc text-uppercase mb-12">
-                Song Request Panel, Spotify
+                Song Request Panel
+                <!-- , Spotify
                 <sup class="text-primary text-capitalize"
                   >Powered by Spotify</sup
-                >
+                > -->
               </p>
-              <form action="">
+              <!-- <form action=""> -->
                 <div
                   class="d-flex flex-lg-row flex-column align-items-end gap-6"
                 >
@@ -143,41 +154,47 @@
                     type="text"
                     class="form-control text-primary border-primary"
                     placeholder="type an artist, song or album..."
+                    id="songinput"
+                    oninput="fetch_songslist(this)"
+                    value="My Hear"
+                    required
                   />
                   <button class="btn btn-primary text-nowrap">
                     Send Request
                   </button>
                 </div>
-              </form>
-              <p class="text-success mt-5 mb-4">
+                <ol class="list-group list-group-numbered" id="restuls">
+                  
+                </ol>
+              <!-- <p class="text-success mt-5 mb-4">
                 Song request for <b>Break My Soul - Beyonce</b> has been sent to
                 the DJ.
-              </p>
+              </p> -->
               <div class="alert bg-light mb-0">
-                Don't forget to turn the AC up!
+                <b> Don't forget to turn the AC up!</b>
+                <small><br> By clicking 'Send Request', you agree to send a message with song information to us and that you receive promotional messages. You may receive up to 4 messages a month. Standard message and data rates may apply. This agreement isn't a condition of any purchase. Reply STOP to end and opt-out. For help, email team@authenticcraftentertainment.com</small>
               </div>
             </div>
           </div>
         </div>
+      </form>
       </div>
     </section>
     <section class="grown" id="grown">
       <div class="container">
         <div class="row gx-lg-5">
           <div class="col-lg-7">
-            <h2 class="text-uppercase text-danger">Grown and Sexy</h2>
-            <p class="fw-bold text text-primary">District Oakland</p>
+            <h2 class="text-uppercase text-danger" id="main_heading"></h2>
+            <p class="fw-bold text text-primary" id="area"></p>
             <h5 class="font-base mb-6">
-              Status: <span class="text-success">Live</span>
+              Status: <span class="text-success" id="status"></span>
             </h5>
-            <p class="text">
-              Join us today for Grown & Sexy, held at District Oakland. Pairing
-              great eats 🍔🥗 with great music 🔊. Come hear your favorite R&B,
-              Throwbacks, Afrobeats & Hip-Hop 🎶
+            <p class="text" id="paragraph">
+
             </p>
           </div>
           <div class="col-lg-5">
-            <img src="./images/grown.png" height="543" width="100%" alt="" />
+            <img src="" id="current_image" height="543" width="100%" alt="" />
           </div>
         </div>
       </div>
@@ -260,10 +277,12 @@
         </div>
       </div>
     </footer>
-
+    <div class="loading" id="loader1" style="visibility: hidden;">Loading&#8230;</div>
+    <script src="./js/baseurl.js"></script>
     <script src="./js/jquery-3.7.0.js"></script>
     <script src="./js/popper.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/script.js"></script>
+    
   </body>
 </html>
