@@ -101,12 +101,26 @@ function fetch_songslist(songinput) {
       type: "post",
       url: `${baseurl}/admin/fetch-tracks/search?q=${input}`,
       success: function (result) {
+        var id_setup = 0;
+        var comma = "";
         document.getElementById("restuls").innerHTML = "";
         result.items.forEach((element) => {
-          // console.log(element.name);
+          // console.log(element);
           document.getElementById(
             "restuls"
-          ).innerHTML += `<li class="list-group-item" onclick="movevaluetoinput(this)">${element.name}</li>`;
+          ).innerHTML += `<li class="list-group-item" onclick="movevaluetoinput(this)">${element.name}
+          <br><small id="id${id_setup}"></small>
+          </li>`;
+          element.artists.forEach((element1, index, array) => {
+            if (index === array.length - 1) {
+              document.getElementById(`id${id_setup}`).innerHTML += element1.name;
+            }
+            else{
+              document.getElementById(`id${id_setup}`).innerHTML += element1.name + comma;
+            }
+          })
+          id_setup++;
+          comma = ", ";
         });
         // console.log(result);
         document.getElementById("loader1").style.visibility = "hidden";
