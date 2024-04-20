@@ -31,7 +31,7 @@ $("#song_request").submit(function (event) {
       if(response.mid){
         Swal.fire({
           icon: "success",
-          title: "Successful!",
+          title: "Successful",
           text: "Request Sent",
           allowOutsideClick: false,
         });
@@ -45,7 +45,7 @@ $("#song_request").submit(function (event) {
       console.log(response);
       //   if (response.status == 500) {
           Swal.fire({
-            title: "Error!",
+            title: "Error",
             text: "Internal Server Error",
             icon: "error",
           });
