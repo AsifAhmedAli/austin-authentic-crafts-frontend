@@ -49,6 +49,7 @@ $("#song_request").submit(function (event) {
             text: "Internal Server Error",
             icon: "error",
           });
+          document.getElementById("loader1").style.visibility = "hidden";
       //   }
     },
   });
