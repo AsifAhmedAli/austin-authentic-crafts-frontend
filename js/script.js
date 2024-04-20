@@ -28,28 +28,27 @@ $("#song_request").submit(function (event) {
     url: `${baseurl}/user/new-request`,
     success: function (response) {
       console.log(response);
-
-      // $("#div11").html(result);
-      // console.log(result)
-      //   Swal.fire({
-      //     icon: "success",
-      //     title: "Successful!",
-      //     text: response.message,
-      //     allowOutsideClick: false,
-      //   });
-      //   $("button.swal2-confirm").click(function () {
-      //     window.location.reload();
-      //   });
+      if(response.mid){
+        Swal.fire({
+          icon: "success",
+          title: "Successful!",
+          text: "Request Sent",
+          allowOutsideClick: false,
+        });
+        $("button.swal2-confirm").click(function () {
+          window.location.reload();
+        });
+      }
       document.getElementById("loader1").style.visibility = "hidden";
     },
     error: function (response) {
       console.log(response);
       //   if (response.status == 500) {
-      //     Swal.fire({
-      //       title: "Error!",
-      //       text: response.responseJSON.message1,
-      //       icon: "error",
-      //     });
+          Swal.fire({
+            title: "Error!",
+            text: "Internal Server Error",
+            icon: "error",
+          });
       //   }
     },
   });
