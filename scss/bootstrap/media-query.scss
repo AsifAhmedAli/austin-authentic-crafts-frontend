@@ -1,0 +1,31 @@
+@include media-breakpoint-down(sm) {
+    
+}
+@include media-breakpoint-down(md) {
+    .about, .request {
+        padding: 24px 0;
+    }
+
+    .request {
+        .box, .white-box {
+            padding: 1rem;
+        }
+    }
+
+    .grown {
+        padding-top: 24px;
+    }
+
+    .tip {
+        padding-bottom: 1rem;
+    }
+}
+@include media-breakpoint-down(lg) {
+    
+}
+@include media-breakpoint-down(xl) {
+    
+}
+@include media-breakpoint-down(xxl) {
+    
+}

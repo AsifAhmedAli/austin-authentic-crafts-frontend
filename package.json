@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "watch": "sass --no-source-map --watch scss/bootstrap/bootstrap.scss:css/bootstrap.css"
+  }
+}
